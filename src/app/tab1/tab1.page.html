@@ -1,17 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-my-header name="Лабораторна робота №1"></app-my-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №1</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Задано три числа. Якщо всі вони парні, то знайти їх добуток. В
+        іншому випадку – квадрат суми, якщо сума їхніх цифр непарна.
+      </p>
+        <ion-item>
+          <ion-input
+            label="Перше число"
+            labelPlacement="stacked"
+            type="number"
+            id="a"
+            value="1"
+            #Inputa
+          ></ion-input>
+        </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+        <ion-item>
+          <ion-input
+            label="Друге число"
+            labelPlacement="stacked"
+            type="number"
+            id="b"
+            value="2"
+            #Inputb
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Третє число"
+            labelPlacement="stacked"
+            type="number"
+            id="c"
+            value="3"
+            #Inputc
+          ></ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          (click)="calculate(Inputa.value,Inputb.value,Inputc.value)"
+        >Розрахунок</ion-button>
+        <ion-item>
+          <p>Результат обчтслення {{d}}</p>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,32 @@
+<app-my-header name="Лабораторна робота №2"></app-my-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Перелік кафедр</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <div *ngFor="let faculty of getGroupedByFaculty() | keyvalue; trackBy: trackByFaculty">
+      <ion-item>
+          <ion-toolbar color="tertiary">
+            <ion-title>{{ faculty.key }}</ion-title>
+          </ion-toolbar>
+      </ion-item>
+
+      <div *ngFor="let department of faculty.value; trackBy: trackByDepartment">
+        <ion-item>
+          <ion-label>
+            <h3>{{ department.departmentName }}</h3>
+            <p>Завідувач кафедри: {{ department.headName }}</p>
+            <p>Кількість викладачів: {{ department.numberOfTeachers }}</p>
+            <p>Адреса: {{ department.address }}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </ion-list>
+  <div class="chart-container">
+    <canvas #lineCanvas></canvas>
+  </div>
+</ion-content>
