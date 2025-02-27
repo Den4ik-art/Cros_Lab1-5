@@ -1,0 +1,33 @@
+<app-my-header name="Лабораторна робота №3"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Скласти програму з абстрактним батьківським класом і двома об'єктами - нащадками. Реалізувати циклічне виведення параметрів об'єктів, використовуючи поліморфний контейнер - масив об'єктів базового класу.
+        Завдання:
+        <br>Позначити кольорами значення, які <strong>більше</strong> за середню вагу <span class="blue1">------------------</span>
+        <br>Позначити кольорами значення, які <strong>менше</strong> за середню вагу <span class="blue2">------------------</span>
+        <br>Позначити кольорами значення, які <strong>дорівнює</strong> середній вазі <span class="blue3">------------------</span>
+      </p>
+      <ion-toolbar color="primary">
+        <ion-title>Середня вага: {{ averageWeight }}</ion-title>
+      </ion-toolbar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Результати</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let item of sportEquipment" class="box"
+        [style.background-color]="getColor(item.getWeight())">
+        <div [innerHTML]="item.displayInfo()"></div>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
