@@ -1,4 +1,4 @@
-export type NameSportsEquipment = 'Гантеля' | 'Штанга';
+export type NameSportsEquipment = 'Гантеля' | 'Штанга' | 'Мяч';
 export type NameSportsEquipmentMap = {
     [key: string]: NameSportsEquipment;
 };
@@ -6,4 +6,5 @@ export type NameSportsEquipmentMap = {
 export const NameSportsEquipmentMaps: NameSportsEquipmentMap = {
     dumbbell: 'Гантеля',
     barbell: 'Штанга',
+    ball: 'Мяч',
 };

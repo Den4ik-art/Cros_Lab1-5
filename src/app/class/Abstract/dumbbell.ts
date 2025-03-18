@@ -1,6 +1,6 @@
 import { overrides } from "chart.js/dist/core/core.defaults";
 import { sportsEquipment } from "./sportsEquipment";
-export class dumbbell extends sportsEquipment {
+export class Dumbbell extends sportsEquipment {
     constructor (
         name: string,
         weight: number,
@@ -12,7 +12,7 @@ export class dumbbell extends sportsEquipment {
 
     getAdjustableStatus(): string {
         return this.isAdjustable ? "Так" : "Ні";
-      }
+    }
 
     displayInfo(): string{
         return (
