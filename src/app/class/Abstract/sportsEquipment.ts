@@ -1,5 +1,3 @@
-import { afterNextRender } from "@angular/core";
-
 export abstract class sportsEquipment {
     name: string = '';
     weight: number = 1;

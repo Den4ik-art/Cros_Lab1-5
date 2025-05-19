@@ -15,7 +15,7 @@ describe ('ball testing', () => {
     fit("Створення екземпляру з від'ємною вагою", () => {
         expect(() => new Ball("Football", -50, "Leather", "Soccer")).toThrow(new Error('weight<=0'));
     })
-    //перевірка функцій
+
     // Тестування методу getWeight()
     fit("Перевірка getWeight()", () => {
         expect(ball.getWeight()).toBe(450);
